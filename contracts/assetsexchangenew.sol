@@ -326,15 +326,15 @@ contract AssetsListnew {
     Asset[] AssetsList;
     function addAsset(string name, string content,uint price, string img,address investorClaimHolder) public {
         ClaimHolder beneficiaryIdentity = ClaimHolder(investorClaimHolder);
-        require(checkClaim(beneficiaryIdentity, 7),"the claim buyer held is ilegal ");
+        require(checkClaim(beneficiaryIdentity, 7),"the claim buyer held is ilegal.");
         AssetsList.push(Asset(msg.sender,name,content,price,img));
     }
     function getAssetByID(uint index) public view returns(address,string,string,uint,string){
         return (AssetsList[index].owner,AssetsList[index].name,AssetsList[index].content,AssetsList[index].price,AssetsList[index].img);
     }
     function removeAssetByID(uint index)public returns(bool,uint){
-        require(msg.sender == AssetsList[index].owner);
-        require(index >= 0 && index < AssetsList.length);
+        require(msg.sender == AssetsList[index].owner,"this asset doesn't belongs to you.");
+        require(index >= 0 && index < AssetsList.length,"this asset you want to delete doesn't not exist.");
         uint len = AssetsList.length;
         for(uint i = index;i<len-1;i++){
             AssetsList[i] = AssetsList[i+1];
@@ -345,7 +345,7 @@ contract AssetsListnew {
     }
     function buyAssetById(uint index,address investorClaimHolder) public payable returns(address,address){
         ClaimHolder beneficiaryIdentity = ClaimHolder(investorClaimHolder);
-        require(checkClaim(beneficiaryIdentity, 7),"the claim buyer held is ilegal ");
+        require(checkClaim(beneficiaryIdentity, 7),"the claim buyer held is ilegal.");
         address oldOwner = AssetsList[index].owner;
         require(AssetsList[index].owner != msg.sender,"the buyer has owned this asset");
         require(AssetsList[index].price == msg.value,"pay error");

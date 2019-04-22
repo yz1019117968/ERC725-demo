@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.15.2",
     "ganache-cli": "^6.3.0",
+    "ipfs-api": "^26.1.2",
     "mocha": "^4.0.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-router-dom": "^5.0.0",
+    "react-router-native": "^5.0.0",
     "react-scripts": "2.1.5",
     "rimraf": "^2.6.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.86.0",
     "solc": "^0.4.24",
+    "truffle-hdwallet-provider": "0.0.3",
     "web3": "^1.0.0-beta.34"
   },
   "scripts": {
@@ -21,8 +28,9 @@
     "precompile:w": "npm run compile",
     "compile:w": "onchange './contracts/*.sol' --npm run compile",
     "test:w": "mocha --watch",
-    "rebuild":"npm run compile && mocha",
-    "postrebuild":"onchange './contracts/*.sol' './test/*.js' --npm run rebuild "
+    "rebuild": "npm run compile && mocha",
+    "postrebuild": "onchange './contracts/*.sol' './test/*.js' --npm run rebuild ",
+    "deploy":"node scripts/deploy.js"
   },
   "eslintConfig": {
     "extends": "react-app"

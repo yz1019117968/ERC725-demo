@@ -1,0 +1,82 @@
+.fileUpload {
+    display: none;
+  }
+  
+  .document-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .document-upload {
+    border: 5px dashed #cfd8dc;
+    color: #cfd8dc;
+    font-size: 250%;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 3.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .document-upload:hover {
+    border-color: #78909c;
+    color: #78909c;
+  }
+  
+  .document-thumbnail {
+    padding: 2rem;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .document-thumbnail__name {
+    font-weight: bold;
+  }
+  
+  .document-thumbnail__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .document-thumbnail__content {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+  }
+  
+  .document-remark {
+    font-size: 90%;
+    white-space: nowrap;
+  }
+  
+  .document-remark-item {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .document-remark-item__label {
+    flex: 1;
+    padding-right: 1rem;
+  }
+  
+  .document-remark-item__content {
+    flex: 1;
+    font-weight: bold;
+  }
